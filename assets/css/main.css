@@ -7,6 +7,10 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -3006,7 +3010,7 @@ input, select, textarea {
 			background-color: #353849;
 			border-radius: 5px;
 			margin: 0.5em;
-			width: calc(25% - 1em);
+			width: calc(50% - 1em);
 		}
 
 			.features article .image {
@@ -3039,14 +3043,6 @@ input, select, textarea {
 				margin: 0.5em;
 				width: calc(50% - 1em);
 			}
-
-				.features article .image {
-					margin-bottom: 1.5em;
-					margin-left: -1.5em;
-					margin-top: -1.5em;
-					width: calc(100% + 3em);
-				}
-
 		}
 
 		@media screen and (max-width: 480px) {
@@ -3371,8 +3367,22 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		padding: 10em 0 4.75em 0 ;
+		padding: 10em 0 4.75em 0;
 	}
+
+    #banner .inner {
+        opacity: 0;
+        animation: fadeIn ease 1s forwards;
+    }
+
+    @keyframes fadeIn {
+        0% {opacity:0; transform: translateY(-5em)}
+        100% {opacity:1; transform: translateY(0)}
+    }
+
+    #banner.is-preload {
+        transform: translateY(2rem);
+    }
 
 		#banner .inner {
 			margin: 0 auto;
@@ -3380,14 +3390,6 @@ input, select, textarea {
 		}
 
 		#banner .logo {
-			-moz-transition: opacity 2s ease, -moz-transform 1s ease;
-			-webkit-transition: opacity 2s ease, -webkit-transform 1s ease;
-			-ms-transition: opacity 2s ease, -ms-transform 1s ease;
-			transition: opacity 2s ease, transform 1s ease;
-			-moz-transform: translateY(0);
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
 			opacity: 1;
 			margin: 0 0 1.3em 0;
 		}
@@ -3405,23 +3407,6 @@ input, select, textarea {
 			}
 
 		#banner h2 {
-			-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
-			-webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
-			-ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
-			transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
-			-moz-transform: translateX(0);
-			-webkit-transform: translateX(0);
-			-ms-transform: translateX(0);
-			transform: translateX(0);
-			-moz-transition-delay: 0.65s;
-			-webkit-transition-delay: 0.65s;
-			-ms-transition-delay: 0.65s;
-			transition-delay: 0.65s;
-			-moz-filter: blur(0);
-			-webkit-filter: blur(0);
-			-ms-filter: blur(0);
-			filter: blur(0);
-			opacity: 1;
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 			font-size: 2.25em;
 			margin-bottom: 0.8em;
@@ -3429,22 +3414,6 @@ input, select, textarea {
 		}
 
 		#banner p {
-			-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
-			-webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
-			-ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
-			transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
-			-moz-transform: translateX(0);
-			-webkit-transform: translateX(0);
-			-ms-transform: translateX(0);
-			transform: translateX(0);
-			-moz-transition-delay: 0.8s;
-			-webkit-transition-delay: 0.8s;
-			-ms-transition-delay: 0.8s;
-			transition-delay: 0.8s;
-			-moz-filter: blur(0);
-			-webkit-filter: blur(0);
-			-ms-filter: blur(0);
-			filter: blur(0);
 			opacity: 1;
 			font-family: Raleway, Helvetica, sans-serif;
 			font-size: 1em;
@@ -3503,38 +3472,6 @@ input, select, textarea {
 					font-size: 0.8em;
 				}
 
-		}
-
-		body.is-preload #banner .logo {
-			-moz-transform: translateY(0.5em);
-			-webkit-transform: translateY(0.5em);
-			-ms-transform: translateY(0.5em);
-			transform: translateY(0.5em);
-			opacity: 0;
-		}
-
-		body.is-preload #banner h2 {
-			opacity: 0;
-			-moz-transform: translateX(0.25em);
-			-webkit-transform: translateX(0.25em);
-			-ms-transform: translateX(0.25em);
-			transform: translateX(0.25em);
-			-moz-filter: blur(2px);
-			-webkit-filter: blur(2px);
-			-ms-filter: blur(2px);
-			filter: blur(2px);
-		}
-
-		body.is-preload #banner p {
-			opacity: 0;
-			-moz-transform: translateX(0.5em);
-			-webkit-transform: translateX(0.5em);
-			-ms-transform: translateX(0.5em);
-			transform: translateX(0.5em);
-			-moz-filter: blur(2px);
-			-webkit-filter: blur(2px);
-			-ms-filter: blur(2px);
-			filter: blur(2px);
 		}
 
 /* Wrapper */
